@@ -22,7 +22,7 @@ class _JsonOneHandleState extends State<JsonOneHandle> {
     return Scaffold(
       body: SafeArea(
           child: FutureBuilder(
-              future: JsonProvider.mapTaker(),
+              future: JsonProvider.jsonPostGetter(),
               builder: (context, AsyncSnapshot<List<JsonOneModel>> snapshot) {
                 if (snapshot.hasData) {
                   return ListView.builder(
@@ -39,7 +39,7 @@ class _JsonOneHandleState extends State<JsonOneHandle> {
                                 backgroundColor: Colors.blue,
                                 child: Center(
                                     child: Text(
-                                  JsonProvider.postList![index].id.toString(),
+                                  JsonProvider.postList[index].id.toString(),
                                   style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
